@@ -6,7 +6,7 @@ import requests
 import logging
 from stem import Signal
 from stem.control import Controller
-from stem.SocketError import SocketError
+from stem.socket import SocketError
 from typing import Optional, Dict, Any
 
 class TorManager:
@@ -237,3 +237,4 @@ if __name__ == '__main__':
         print("Make sure Tor is running:")
         print("  - Linux/macOS: sudo systemctl start tor")
         print("  - Windows: Start Tor Browser")
+

@@ -4,7 +4,8 @@ __version__ = '2.0.0'
 __author__ = 'Haroon Rasheed'
 __license__ = 'MIT'
 
-from .browser_manager import AdvancedBrowserManager as BrowserManager
+# src/__init__.py
+from .advanced_browser import AdvancedBrowserManager as BrowserManager
 from .human_emulator import HumanEmulator
 from .proxy_rotator import ProxyRotator
 from .tor_manager import TorManager

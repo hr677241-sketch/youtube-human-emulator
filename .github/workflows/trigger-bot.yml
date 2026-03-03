@@ -1,0 +1,15 @@
+name: Trigger YouTube Bot
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook to your server
+        run: |
+          curl -X POST https://your-server.com/webhook/start-bot \
+            -H "Authorization: Bearer ${{ secrets.WEBHOOK_SECRET }}"

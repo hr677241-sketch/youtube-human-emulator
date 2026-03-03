@@ -24,5 +24,3 @@ selenium-stealth==1.0.6
 
 # Scheduling
 schedule==1.2.0
-
-# Note: concurrent.futures is built into Python 3.2+, no need to install

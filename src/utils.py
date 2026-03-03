@@ -13,17 +13,28 @@ import yaml
 def setup_logging(config: Dict[str, Any]) -> logging.Logger:
     """Setup logging configuration"""
     
+    # Get log file name from config
+    log_file_config = config.get('file', 'automation.log')
+    
+    # Extract just the filename (remove any path)
+    log_filename = Path(log_file_config).name
+    
     # Create logs directory
     log_dir = Path('logs')
     log_dir.mkdir(exist_ok=True)
+    
+    # Full path: logs/filename.log
+    log_path = log_dir / log_filename
     
     # Configure logger
     logger = logging.getLogger('youtube_human_emulator')
     logger.setLevel(getattr(logging, config.get('level', 'INFO')))
     
+    # Clear any existing handlers
+    logger.handlers.clear()
+    
     # File handler
-    log_file = log_dir / config.get('file', 'automation.log')
-    file_handler = logging.FileHandler(log_file)
+    file_handler = logging.FileHandler(log_path)
     file_handler.setFormatter(logging.Formatter(
         config.get('format', '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     ))

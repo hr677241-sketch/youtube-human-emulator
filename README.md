@@ -1,7 +1,7 @@
 # 🎬 YouTube Human Emulator
 
-[![Tests](https://github.com/yourusername/youtube-human-emulator/actions/workflows/tests.yml/badge.svg)](https://github.com/yourusername/youtube-human-emulator/actions/workflows/tests.yml)
-[![Proxy Updater](https://github.com/yourusername/youtube-human-emulator/actions/workflows/proxy-updater.yml/badge.svg)](https://github.com/yourusername/youtube-human-emulator/actions/workflows/proxy-updater.yml)
+[![Tests](https://github.com/hr677241-sketch/youtube-human-emulator/actions/workflows/tests.yml/badge.svg)](https://github.com/hr677241-sketch/youtube-human-emulator/actions/workflows/tests.yml)
+[![Proxy Updater](https://github.com/hr677241-sketch/youtube-human-emulator/actions/workflows/proxy-updater.yml/badge.svg)](https://github.com/hr677241-sketch/youtube-human-emulator/actions/workflows/proxy-updater.yml)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

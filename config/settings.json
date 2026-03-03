@@ -54,7 +54,7 @@
     },
     "logging": {
         "level": "INFO",
-        "file": "logs/automation.log",
+        "file": "automation.log",
         "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     }
 }

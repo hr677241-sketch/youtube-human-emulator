@@ -6,7 +6,13 @@ import requests
 import logging
 from stem import Signal
 from stem.control import Controller
-from stem.socket import SocketError
+import stem.socket
+
+try:
+    # Example: opening a Tor control connection
+    conn = stem.socket.ControlPort(port=9051)
+except stem.socket.SocketError as e:
+    print(f"Tor connection failed: {e}")
 from typing import Optional, Dict, Any
 
 class TorManager:
@@ -237,4 +243,5 @@ if __name__ == '__main__':
         print("Make sure Tor is running:")
         print("  - Linux/macOS: sudo systemctl start tor")
         print("  - Windows: Start Tor Browser")
+
 

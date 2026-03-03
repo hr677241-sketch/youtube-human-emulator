@@ -1,0 +1,11 @@
+# Format: ip:port or user:pass@ip:port
+# HTTP/HTTPS Proxies
+192.168.1.1:8080
+45.67.89.10:3128
+user:password@103.45.67.89:80
+
+# SOCKS Proxies (if supported)
+socks5://103.123.45.67:1080
+socks4://98.76.54.32:4145
+
+# Add more proxies below

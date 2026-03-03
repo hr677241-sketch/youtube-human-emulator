@@ -1,0 +1,60 @@
+{
+    "youtube_urls": [
+        "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
+        "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2"
+    ],
+    "behavior": {
+        "min_watch_time": 120,
+        "max_watch_time": 300,
+        "min_sessions_per_ip": 1,
+        "max_sessions_per_ip": 3,
+        "interaction_probability": 0.3,
+        "comment_probability": 0.1,
+        "like_probability": 0.2,
+        "subscribe_probability": 0.05
+    },
+    "proxy": {
+        "enabled": true,
+        "proxy_file": "config/proxies.txt",
+        "test_url": "https://www.youtube.com",
+        "max_failures": 3,
+        "timeout": 10,
+        "auto_refresh": true,
+        "refresh_interval": 3600
+    },
+    "tor": {
+        "enabled": false,
+        "control_port": 9051,
+        "socks_port": 9050,
+        "password": ""
+    },
+    "headless": {
+        "enabled": false,
+        "window_width": 1920,
+        "window_height": 1080
+    },
+    "human_like": {
+        "typing_speed": {
+            "min": 0.08,
+            "max": 0.25
+        },
+        "scroll_behavior": {
+            "smooth_scroll": true,
+            "random_pauses": true
+        },
+        "mouse_movements": {
+            "random_curves": true,
+            "natural_acceleration": true
+        }
+    },
+    "sessions": {
+        "max_concurrent": 2,
+        "delay_between_sessions": 300,
+        "randomize_delay": true
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "logs/automation.log",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    }
+}

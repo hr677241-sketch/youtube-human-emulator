@@ -1,15 +1,29 @@
-name: Trigger YouTube Bot
+name: Run main.py
 
-on:
-  schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
-  workflow_dispatch:  # Manual trigger
+on: [push, pull_request]
 
 jobs:
-  trigger:
+  run-main:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+      fail-fast: false
+
     steps:
-      - name: Send webhook to your server
-        run: |
-          curl -X POST https://your-server.com/webhook/start-bot \
-            -H "Authorization: Bearer ${{ secrets.WEBHOOK_SECRET }}"
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run main.py
+      run: |
+        python main.py
